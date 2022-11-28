@@ -27,6 +27,10 @@
 .booksIcon {
     width: 100%;
     margin-bottom: 40px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.booksIcon:hover {
+    transform: scale(1.1);
 }
 
 /* .booksMenu__list > img {

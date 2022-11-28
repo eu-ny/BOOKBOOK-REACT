@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BookSearchResult = ({ books, answerKeyword }) => {
-    // console.log(books)
+    console.log(books)
     if (books.totalItems === 0) {
         return (
             <>

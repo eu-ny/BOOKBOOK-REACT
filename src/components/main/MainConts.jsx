@@ -1,11 +1,13 @@
 import React, { useEffect,useState } from "react";
-import Header from "../include/Header";
 import { Link } from "react-router-dom";
+import Header from "../include/Header";
 import { BookSearch } from '../index'
 import { MainSlider } from '../index'
+
 import MainICon01 from "../../assets/img/mainBookIcon01.png";
 import MainICon02 from "../../assets/img/mainHeartIcon01.svg";
 import MainICon03 from "../../assets/img/mainHeartIcon02.svg";
+
 import { fetchAPI } from "../../utils/fetchAPI";
 
 const MainConts = () => {
@@ -13,10 +15,12 @@ const MainConts = () => {
     // BookSearch가 아래 변수에 존속되어 있으므로 필요한 값을 가져온다.
     const [page, setPage] = useState(1)
     const [startIndex, setStartIndex] = useState(0)
+
     const onLoad = () => {
         // console.log("hi?");
         document.body.removeAttribute("id");
     };
+
     const [images, setImages] = useState('')
 
     useEffect(() => {
