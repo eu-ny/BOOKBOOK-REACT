@@ -9,10 +9,12 @@ import { Autoplay } from "swiper";
 const MainSliderItems = ({images}) => {
     return (
         <Link to={`https://books.google.co.kr/books?id=${images?.id}`}>
-            <img
-                src={images?.volumeInfo?.imageLinks?.thumbnail}
-                alt=""
-            />
+            <figure>
+                <img
+                    src={images?.volumeInfo?.imageLinks?.thumbnail}
+                    alt={images?.volumeInfo?.title}
+                />
+            </figure>
             <span>{images?.volumeInfo?.title}</span>
         </Link>
     )
