@@ -163,4 +163,15 @@
     .booksMenu__list > button {
         margin-top: 30px;
     }
+
+    .smallSearchBar {
+        width: 35vw;
+    }
 } 
+
+@media(max-width: 480px) {
+    .smallSearchBar {
+        width: 90vw;
+    }
+
+}

@@ -1,4 +1,3 @@
-
 /* main background */
 .mainBg01 {
     background-image: url(../img/bg01.png);
@@ -25,7 +24,7 @@
 
 .bg01 {
     position: absolute;
-    top: -1px; 
+    top: -1px;
     right: -2px;
     border-top-right-radius: 30px;
     background-image: url(../img/mainbg02.png);
@@ -54,7 +53,7 @@
 
 .headerTitile {
     font-family: var(--ObjSans);
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: 900;
     line-height: 1.2;
     color: #111053;
@@ -86,7 +85,7 @@
     border-bottom: 2px solid #111053;
 }
 
-/* mainConts */ 
+/* mainConts */
 #mainConts {
     margin-top: 30px;
 }
@@ -117,7 +116,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     cursor: pointer;
-
 }
 
 .genre_pick {
@@ -173,7 +171,7 @@
         transform: translateX(10px) translateY(8px);
     }
     100% {
-        transform: translateX(0px)translateY(-6px);
+        transform: translateX(0px) translateY(-6px);
     }
 }
 
@@ -236,7 +234,7 @@
 /* book list */
 #bookList {
     /* margin-top: 60px; */
-    margin-top: 10vh;
+    margin-top: 10%;
 }
 #bookList > h2 {
     font-size: 20px;
@@ -250,10 +248,13 @@
     padding: 0 3%;
 }
 
-.book-1, .book-2, .book-3, .book-4 {
+.book-1,
+.book-2,
+.book-3,
+.book-4 {
     /* width: 200px;
     height: 260px; */
-    width: 11vw !important;
+    width: 150px !important;
 }
 .book-1 figure {
     overflow: hidden;
@@ -265,7 +266,7 @@
 .book-1 > a img:hover {
     transform: scale(1.2);
 }
-.book-1 > a  span {
+.book-1 > a span {
     display: block;
     text-align: center;
     margin-top: 10px;
@@ -282,14 +283,169 @@
     font-size: 15px;
     margin-bottom: 10px;
 }
-
-
-@media(max-width: 1200px) {
+@media (max-width: 1590px) {
+    #bookList {
+        margin-top: 6%;
+    }
+}
+@media (max-width: 1200px) {
+    .mainBg01 {
+        height: 100vh;
+    }
     #mainWrap {
+        min-height: 90vh;
         left: 1%;
+        top: 4%;
         width: 98%;
     }
     .copylight {
         bottom: 0;
     }
-}   
+    #mainConts .searchWrap {
+        margin-left: 4%;
+    }
+
+    .genre_pick {
+        margin-right: 20px;
+    }
+
+    .headerTitile {
+        font-size: 2.5vw;
+    }
+
+    .book__wrap {
+        padding: 0px 7%;
+    }
+
+    #bookList > h2 {
+        margin-left: 7%;
+    }
+
+    .book-1,
+    .book-2,
+    .book-3,
+    .book-4 {
+        width: 120px !important;
+    }
+    #bookList {
+        margin-top: 4%;
+    }
+    .iconBox .book {
+        top: 50px;
+        right: 24%;
+    }
+    .iconBox .heart01 {
+        top: 120px;
+        right: 38%;
+    }
+    .iconBox .heart02 {
+        top: 76px;
+        left: 36%;
+    }
+
+    .note {
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .mainBg01 {
+        height: 100vh;
+    }
+
+    #mainWrap {
+        min-height: 100%;
+        width: 100%;
+        position: static;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #mainConts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mainConts .searchWrap {
+        margin-bottom: 40px;
+    }
+
+    .bg01 {
+        top: -5px;
+        width: 380px;
+        height: 300px;
+        background-size: 100% 100%;
+        border-top-right-radius: 0;
+    }
+
+    #header {
+        margin: 55px 24px 0;
+        flex-direction: column;
+    }
+    .headerTitile {
+        font-size: 7vw;
+    }
+
+    .mainMenu {
+        margin-top: 9%;
+        width: 100%;
+    }
+
+    .genre_pick {
+        margin-right: 10px;
+    }
+
+    .book__wrap {
+        padding: 0;
+    }
+
+    #bookList {
+        margin-top: 40px;
+    }
+
+    #bookList > h2 {
+        margin-left: 0;
+    }
+
+    .book-1,
+    .book-2,
+    .book-3,
+    .book-4 {
+        width: 100px !important;
+    }
+    .swiper-slide .book-1 {
+        margin-right: 20px !important;
+    }
+
+    /* 아이콘 모바일 */
+
+    .rightCont {
+        background: #f5f5f5;
+    }
+
+    /* .iconBox .book,
+    .iconBox .heart01, */
+    .note {
+        position: static;
+        margin: 40px auto;
+        transform: scale(1.2);
+    }
+    .noteDesc {
+        padding-top: 60px;
+    }
+
+    .iconBox .heart02 {
+        top: 50px;
+        left: 58%;
+        width: 40%;
+        overflow: hidden;
+    }
+    .iconBox .heart02 > img {
+        transform: rotate(23deg);
+    }
+
+    .copylight {
+        position: fixed;
+        bottom: 0;
+    }
+}
