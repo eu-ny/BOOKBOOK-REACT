@@ -101,7 +101,7 @@
     width: 44.5%;
     height: 320px;
     /* background: #fff; */
-    padding: 30px 52px;
+    padding: 8% 52px;
     box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     text-align: center;
@@ -201,9 +201,16 @@
 
 
 /* 미디어 */
-@media (max-width: 1200px){
-    .booksMenu__list.genre > .genbtn {
+@media (max-width: 1180px){
+    /* .booksMenu__list.genre > .genbtn {
         margin-top: 10px !important;
+    } */
+    .tag__third {
+        padding: 8% 6%;
+    }
+    .tag__third p {
+        font-size: 1.5rem;
+        margin-bottom: 25%;
     }
 
 
