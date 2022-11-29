@@ -20,9 +20,9 @@ function App() {
                 <Route path="/books/" element={<BooksConts />}></Route>
                 <Route path="/booksearch/:searchKeyword/:answerKeyword" element={<BookSearchConts />}></Route>
                 <Route path="/quiz/" element={<QuizConts />}></Route>
+                <Route path="/booksearch/:searchKeyword/:answerKeyword" element={<BookSearchConts />}></Route>
                 <Route path="/tag/" element={<TagConts />}></Route>
-                <Route path="/BooksResults/:bookId" element={<BooksResults />}></Route>
-                {/* <Route path="/BooksResults/:bookId" element={<RightAside />}></Route> */}
+                <Route path="/booksResults/:bookId" element={<BooksResults />}></Route>
             </Routes>
             {/* 로우터 : 링크 달아주기 ->  */}
         </BrowserRouter>

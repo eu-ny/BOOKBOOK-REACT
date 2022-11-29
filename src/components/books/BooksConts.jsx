@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useState, useEffect } from "react";
+
+import { Loader } from '../index'
+
 import LeftAside from "../include/LeftAside";
 import BookSearch from "../search/BookSearch";
 import BooksSlider from "./BooksSlider";
 import BooksSlider2 from "./BooksSlider2";
+
 import { fetchAPI } from "../../utils/fetchAPI";
-import { useState, useEffect } from "react";
 // import { useParams } from 'react-router-dom'
 
 const BooksConts = () => {
@@ -13,6 +17,9 @@ const BooksConts = () => {
 
     const [page, setPage] = useState(1)
     const [startIndex, setStartIndex] = useState(0)
+
+    const [loading, setLoading] = useState(true)
+
 
     // const { bookId } = useParams()
     // const [book, setBook] = useState('')
@@ -29,24 +36,43 @@ const BooksConts = () => {
 
     
 
-    useEffect(() => {
-        fetchAPI(
-            `&printType=books&langRestrict=ko&q=-19%26+소설+subject:fiction`
-        ).then(
-            // (data) => console.log(data.items)
-            (data) => setSlider(data.items)
+    // useEffect(() => {
+    //     fetchAPI(
+    //         `&printType=books&langRestrict=ko&q=-19%26+소설+subject:fiction`
+    //     ).then(
+    //         // (data) => console.log(data.items)
+    //         (data) => setSlider(data.items)
+    //     );
+
+    // }, []);
+
+    // useEffect(() => {
+    //     fetchAPI(
+    //         `q=-19%26+추리+subject:fiction&printType=books&langRestrict=ko&orderBy=relevance`
+    //     ).then(
+    //         // (data) => console.log(data.items)
+    //         (data) => setSliderTwo(data.items)
+    //     );
+    // }, []);
+
+    const fetchBooksData = useCallback(async () => {
+        setLoading(true)
+        await fetchAPI(`&printType=books&langRestrict=ko&q=-19%감동+소설+subject:fiction` ).then(
+                    // (data) => console.log(data.items)
+                    (data) => setSlider(data.items)
         );
-
-    }, []);
-
-    useEffect(() => {
-        fetchAPI(
-            `q=-19%26+소설+subject:fiction&printType=books&langRestrict=ko&orderBy=relevance`
-        ).then(
+        await fetchAPI(`&printType=books&langRestrict=ko&q=-19%스릴러+소설+subject:fiction` ).then(
             // (data) => console.log(data.items)
             (data) => setSliderTwo(data.items)
-        );
-    }, []);
+        )
+        setLoading(false)
+        
+    }, [])
+
+    useEffect(() => {
+        fetchBooksData()
+    },[fetchBooksData])
+
 
     return (
         <section id="plaid" className="flex">
@@ -59,10 +85,11 @@ const BooksConts = () => {
                         </h2>
                         <BookSearch page={page} startIndex={startIndex} setPage={setPage} setStartIndex={setStartIndex}/>
                     </div>
-                    <div className="bookAllList">
+                    {loading ? (<Loader />) : (<div className="bookAllList"> <BooksSlider slider={slider}/> <BooksSlider2 sliderTwo={sliderTwo}/></div>) }
+                    {/* <div className="bookAllList">
                         <BooksSlider slider={slider}/>
                         <BooksSlider2 sliderTwo={sliderTwo}/>
-                    </div>
+                    </div> */}
                 </section>
             </main>
         </section>

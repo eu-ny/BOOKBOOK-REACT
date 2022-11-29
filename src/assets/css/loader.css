@@ -1,7 +1,6 @@
 .loader {
-    position: absolute;
-    position: absolute;
-    left: 50%;
+    position: fixed;
+    left: 60%;
     top: 50%;
 }
 .book {

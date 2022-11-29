@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const BookSearchResult = ({ books, answerKeyword }) => {
     console.log(books)
@@ -8,10 +7,7 @@ const BookSearchResult = ({ books, answerKeyword }) => {
             <>
                 <div className="box">
                     <figure>
-                        <img
-                            src={process.env.PUBLIC_URL + "/img/noBookImg.png"}
-                            alt="북북에서"
-                        />
+                        <img src={process.env.PUBLIC_URL + "/img/noBookImg.png"} alt="북북에서" />
                     </figure>
                     <div className="box__info">
                         <h2 className="title">
@@ -27,39 +23,19 @@ const BookSearchResult = ({ books, answerKeyword }) => {
                 {books?.items?.map((book) => (
                     <div className="box" key={book.id}>
                         <figure>
-                            {book?.volumeInfo?.imageLinks?.thumbnail ===
-                            undefined ? (
-                                <img
-                                    src={
-                                        process.env.PUBLIC_URL +
-                                        "/img/noBookImg.png"
-                                    }
-                                    alt="북북에서"
-                                />
-                            ) : (
-                                <img
-                                    src={
-                                        book?.volumeInfo?.imageLinks?.thumbnail
-                                    }
-                                    alt="북북에서"
-                                />
-                            )}
+                            { book?.volumeInfo?.imageLinks?.thumbnail === undefined ? ( <img src={ process.env.PUBLIC_URL +"/img/noBookImg.png"} alt="북북에서" /> ) : (<img src={ book?.volumeInfo?.imageLinks?.thumbnail } alt="북북에서" /> )}
                         </figure>
                         <div className="box__info">
                             <h2 className="title">{book?.volumeInfo?.title}</h2>
                             <p className="author">
-                                {book?.volumeInfo?.authors === undefined
-                                    ? "작자미상"
-                                    : book?.volumeInfo?.authors}
+                                {book?.volumeInfo?.authors === undefined ? "작자미상": book?.volumeInfo?.authors}
                             </p>
                             <p className="date">
                                 {book?.volumeInfo?.publishedDate?.replace(/-/g,".")}
                             </p>
-                            <Link to={`/BooksResults/${book?.volumeInfo?.industryIdentifiers[0]?.identifier}`}>
-                                <button className="box__button" type="button">
-                                    view
-                                </button>
-                            </Link>
+                            <button className="box__button" type="button">
+                                view
+                            </button>
                         </div>
                     </div>
                 ))}

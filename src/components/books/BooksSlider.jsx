@@ -8,10 +8,12 @@ import { Autoplay } from "swiper";
 
 const BooksSliderItems = ({ slider }) => {
     return (
-        <>
-            <img src={slider?.volumeInfo?.imageLinks?.thumbnail} alt={slider?.volumeInfo?.title} />
+        <Link to={`/BooksResults/id=${slider?.id}`}>
+            <figure>
+                <img src={slider?.volumeInfo?.imageLinks?.thumbnail} alt={slider?.volumeInfo?.title} />
+            </figure>
             <span>{slider?.volumeInfo?.title}</span>
-        </>
+        </Link>
     );
 };
 
@@ -30,14 +32,12 @@ const BooksSlider = ({ slider }) => {
             modules={[Autoplay]}
             className="mySwiper line__first"
         >
-            {slider &&
-                slider.map((slider, idx) => (
-                    <SwiperSlide className="bookAll__img" key={idx}>
-                        <Link to={`/BooksResults/${slider?.volumeInfo?.industryIdentifiers?.identifier}`}>
-                            <BooksSliderItems slider={slider} />
-                        </Link>
-                    </SwiperSlide>
-                ))}
+            {slider && slider.map((slider, idx) => (
+                <SwiperSlide className="bookAll__img" key={idx}>
+                    {/* <Link to={`/BooksResults/${slider?.volumeInfo?.industryIdentifiers?.identifier}`}> */}
+                    <BooksSliderItems slider={slider} />
+                </SwiperSlide>
+            ))}
         </Swiper>
 		<img src={ process.env.PUBLIC_URL + "/img/booksBar.svg"} alt="bookBar"></img>
 		</>

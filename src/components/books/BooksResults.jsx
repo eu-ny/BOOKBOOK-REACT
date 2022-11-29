@@ -16,14 +16,9 @@ const BooksResults = () => {
     const [book, setBook] = useState('')
 
     useEffect(() => {
-        fetchAPI(
-            `printType=books&langRestrict=ko&q=${bookId}`
-            ).then(
-                (data) => setBook(data.items[0])
-                )
-                // fetchAPI에 사용할 값 가져오기.
+        fetchAPI(`printType=books&langRestrict=ko&q=${bookId}`).then((data) => setBook(data.items[0]))
+        // [bookId] -> fetchAPI에 사용할 값 가져오기.
     }, [bookId]);
-
 
 
     return (
@@ -34,16 +29,16 @@ const BooksResults = () => {
                     <h2>PREVIEW</h2>
                     <div className="previewBox">
                         <button className="previewCloseBtn ir" onClick={navigateClick}>button</button>
+                        {/* {loading ? ( <Loader />) : () } */}
                         <div className="previewInner">
                             <figure className="previewImg">
-                                <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt={book?.volumeInfo?.title} />
+                            { book?.volumeInfo?.imageLinks?.thumbnail === undefined ? ( <img src={ process.env.PUBLIC_URL +"/img/noBookImg.png"} alt="북북에서" /> ) : (<img src={ book?.volumeInfo?.imageLinks?.thumbnail } alt="북북에서" /> )}
+                                {/* <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt={book?.volumeInfo?.title} /> */}
                             </figure>
                             <div className="preview__desc">
                                 <h3 className="title">{book?.volumeInfo?.title}</h3>
                                 <p className="writer">{book?.volumeInfo?.authors}</p>
-                                <p className="summary">
-                                    {book?.volumeInfo?.description}
-                                </p>
+                                <p className="summary">{book?.volumeInfo?.description}</p>
                             </div>
                         </div>
                     </div>

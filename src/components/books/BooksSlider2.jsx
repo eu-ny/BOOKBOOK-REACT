@@ -8,8 +8,10 @@ import { Autoplay } from "swiper";
 
 const BooksSliderItems = ({ sliderTwo }) => {
     return (
-        <Link to={``}>
-            <img src={sliderTwo?.volumeInfo?.imageLinks?.thumbnail} alt={sliderTwo?.volumeInfo?.title} />
+        <Link to={`/BooksResults/${sliderTwo?.volumeInfo?.title}`}>
+            <figure>
+                <img src={sliderTwo?.volumeInfo?.imageLinks?.thumbnail} alt={sliderTwo?.volumeInfo?.title} />
+            </figure>
             <span>{sliderTwo?.volumeInfo?.title}</span>
         </Link>
     );
