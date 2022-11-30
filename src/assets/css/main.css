@@ -64,6 +64,18 @@
     color: transparent;
 }
 
+.headerTitile:hover {
+    animation: rotateX 0.5s infinite;
+}
+@keyframes rotateX {
+    0% {
+        transform: rotateX(-10px);
+    }
+    100% {
+        transform: rotateX(10px);
+    }
+}
+
 .mainMenu {
     text-align: right;
     width: 40%;
@@ -238,6 +250,7 @@
 }
 #bookList > h2 {
     font-size: 20px;
+    font-weight: 800;
     margin-bottom: 20px;
     margin-left: 3%;
 }
@@ -348,7 +361,23 @@
     }
 }
 
+@media (max-width: 600px) {
+    #header {
+        margin: 55px 70px 30% 0;
+    }
+}
+
+
 @media (max-width: 480px) {
+    #header {
+        margin: 55px 70px 40% 0;
+    }
+    .books__header {
+        display: block;
+        margin: 0 auto 90px;
+        margin-right: 8%;
+    }
+
     .mainBg01 {
         height: 100vh;
     }
@@ -378,10 +407,6 @@
         border-top-right-radius: 0;
     }
 
-    #header {
-        margin: 55px 24px 0;
-        flex-direction: column;
-    }
     .headerTitile {
         font-size: 7vw;
     }
@@ -431,6 +456,7 @@
         transform: scale(1.2);
     }
     .noteDesc {
+        margin: 0;
         padding-top: 60px;
     }
 

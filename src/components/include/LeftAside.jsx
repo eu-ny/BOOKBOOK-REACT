@@ -18,24 +18,28 @@ const LeftAside = () => {
                     </Link>
                 </h2>
 
-                <figure className="booksIcon">
-                    <img src={process.env.PUBLIC_URL + '/img/booksIcon01.svg'} alt="아이콘1" />
-                </figure>
+                <div className="booksMenu__desc">
+                    <figure className="booksIcon">
+                        <img src={process.env.PUBLIC_URL + '/img/booksIcon01.svg'} alt="아이콘1" />
+                    </figure>
 
-                <Link to="/books" className="link" onClick={bgadd}>
-                    BOOKS
-                </Link>
-                <Link to="/quiz" className="link" onClick={bgadd}>
-                    QUIZ
-                </Link>
-                <Link to="/tag/" className="link" onClick={bgadd}>
-                    GENRE
-                </Link>
+                    <Link to="/books" className="link" onClick={bgadd}>
+                        BOOKS
+                    </Link>
+                    <Link to="/quiz" className="link" onClick={bgadd}>
+                        QUIZ
+                    </Link>
+                    <Link to="/tag/" className="link" onClick={bgadd}>
+                        GENRE
+                    </Link>
 
-                <button type="button" onClick={navigateClick}>
-                    <span className="ir">왼쪽 화살표</span>
-                    <em>BACK</em>
-                </button>
+                    <button type="button" onClick={navigateClick}>
+                        <span className="ir">왼쪽 화살표</span>
+                        <em>BACK</em>
+                    </button>
+
+                </div>
+
             </nav>
         </header>
     );

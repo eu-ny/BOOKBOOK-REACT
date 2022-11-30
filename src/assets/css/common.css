@@ -138,6 +138,10 @@ body {
 
 }
 
+@media (max-width: 600px) {
+
+}
+
 @media (max-width: 480px) {
     .main__container {
         padding: 0 24px;

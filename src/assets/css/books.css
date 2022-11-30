@@ -37,7 +37,7 @@
     vertical-align: top;
 } */
 
-.booksMenu__list > a {
+.booksMenu__desc > a {
     display: inline-block;
     background: #f3f3f6;
     padding: 8% 20%;
@@ -47,10 +47,10 @@
     border-radius: 10px;
     margin-bottom: 30px;
 }
-.booksMenu__list > a:nth-child(4) {
+.booksMenu__desc > a:nth-child(3) {
     padding: 8% 24%;
 }
-.booksMenu__list > button {
+.booksMenu__desc > button {
     display: flex;
     align-items: center;
     font-family: var(--ObjSans);
@@ -62,13 +62,13 @@
     margin-top: 20px;
     cursor: pointer;
 }
-.booksMenu__list > button > span {
+.booksMenu__desc > button > span {
     display: inline-block;
     width: 40px;
     height: 40px;
     background: url(../img/leftArrow.svg);
 }
-.booksMenu__list > button > em {
+.booksMenu__desc > button > em {
     padding-top: 5px;
     padding-left: 20px;
 }
@@ -168,6 +168,72 @@
         width: 35vw;
     }
 } 
+
+@media(max-width: 900px) {
+    .booksMenu__list {
+        width: 28%;
+    }
+    #booksSection {
+        width: 73%;
+    }
+    .books__header {
+        margin-right: 4%;
+    }
+    .books__header > h2 {
+        font-size: 3vw;
+    }
+    .bookAll__img {
+        width: 21% !important;
+    }
+
+}
+
+@media(max-width: 600px) {
+    .flex {
+        flex-direction: column;
+    }
+    .booksIcon {
+        position: absolute;
+        width: 45%;
+        right: 28%;
+        top: -9%;
+        z-index: -1;
+        opacity: 0.4;
+    }
+    .booksMenu__list {
+        position: absolute;
+        width: 100%;
+        height: 175px;
+        z-index: 2;
+        padding: 10px 0;
+    }
+    .booksMenu__list > h2 {
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+    #booksSection {
+        width: 100%;
+    }
+
+    .booksMenu__desc {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .booksMenu__desc > a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .booksMenu__desc > a:nth-child(3) {
+        padding: 10px 26px;
+    }
+
+    .booksMenu__desc > button {
+        display: none;
+    }
+
+}
 
 @media(max-width: 480px) {
     .smallSearchBar {
