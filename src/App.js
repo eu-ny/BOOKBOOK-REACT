@@ -9,7 +9,7 @@ import {
     BooksResults,
     // Header,
     // LeftAside,
-    // RightAside,
+    RightAside,
 } from "./components/index";
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
                 <Route path="/booksearch/:searchKeyword/:answerKeyword" element={<BookSearchConts />}></Route>
                 <Route path="/tag/" element={<TagConts />}></Route>
                 <Route path="/booksResults/:bookId" element={<BooksResults />}></Route>
+                <Route path="/booksResults/:bookId" element={<RightAside />}></Route>
             </Routes>
             {/* 로우터 : 링크 달아주기 ->  */}
         </BrowserRouter>

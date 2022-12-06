@@ -108,7 +108,7 @@
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.142);
     text-align: center;
 }
-.smallSearchBtn{
+.smallSearchBtn {
     position: absolute;
     right: 9px;
     top: 7px;
@@ -146,11 +146,11 @@
 }
 
 .line__two {
-   margin-top: 40px;
+    margin-top: 40px;
 }
 
 /* 미디어쿼리 */
-@media(max-width: 1200px) {
+@media (max-width: 1200px) {
     .booksMenu__list {
         width: 23%;
     }
@@ -167,9 +167,9 @@
     .smallSearchBar {
         width: 35vw;
     }
-} 
+}
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
     .booksMenu__list {
         width: 28%;
     }
@@ -186,9 +186,12 @@
         width: 21% !important;
     }
 
+    .booksWrap {
+        margin-left: 12%;
+    }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
     .flex {
         flex-direction: column;
     }
@@ -232,12 +235,33 @@
     .booksMenu__desc > button {
         display: none;
     }
-
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
     .smallSearchBar {
-        width: 90vw;
+        width: 82vw;
+        padding-right: 6vw;
+        font-size: 14px;
     }
 
+    #booksSection .smallSearchBtn {
+        right: 5vw;
+    }
+
+    .booksMenu__list {
+        height: 150px;
+        box-shadow: 0 4px 15px rgb(0 0 0 / 8%);
+    }
+
+    .booksIcon {
+        top: 5%;
+    }
+
+    .bookAll__img {
+        width: 30%!important;
+    }
+
+    .bookBar {
+        height: 10px;
+    }
 }

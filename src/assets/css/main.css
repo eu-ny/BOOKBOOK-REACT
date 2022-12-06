@@ -28,7 +28,8 @@
     right: -2px;
     border-top-right-radius: 30px;
     background-image: url(../img/mainbg02.png);
-    width: 800px;
+    /* width: 800px; */
+    width: 80vw;
     height: 500px;
     /* width: 70%;
     height: 57%; */
@@ -318,6 +319,10 @@
         margin-left: 4%;
     }
 
+    #mainConts .smallSearchBtn {
+        right: 3vw;
+    }
+
     .genre_pick {
         margin-right: 20px;
     }
@@ -361,25 +366,33 @@
     }
 }
 
-@media (max-width: 600px) {
-    #header {
+@media (max-width: 900px) {
+    /* #header {
         margin: 55px 70px 30% 0;
+    } */
+    #bookList {
+        margin-top: 20%;
     }
+
 }
 
 
 @media (max-width: 480px) {
     #header {
-        margin: 55px 70px 40% 0;
+        /* margin: 55px 70px 40% 0; */
+        margin: 40px 20px 0;
+        flex-direction: column;
     }
     .books__header {
         display: block;
-        margin: 0 auto 90px;
         margin-right: 8%;
     }
 
     .mainBg01 {
         height: 100vh;
+    }
+    .mainInner {
+        overflow: hidden;
     }
 
     #mainWrap {
@@ -390,6 +403,7 @@
         box-shadow: none;
     }
 
+
     #mainConts {
         display: flex;
         flex-direction: column;
@@ -397,11 +411,12 @@
 
     #mainConts .searchWrap {
         margin-bottom: 40px;
+        margin-left: 2%;
     }
 
     .bg01 {
         top: -5px;
-        width: 380px;
+        width: 98vw;
         height: 300px;
         background-size: 100% 100%;
         border-top-right-radius: 0;
@@ -425,7 +440,8 @@
     }
 
     #bookList {
-        margin-top: 40px;
+        margin-top: 60px;
+        margin-bottom: 90px;
     }
 
     #bookList > h2 {
@@ -460,11 +476,23 @@
         padding-top: 60px;
     }
 
+    .iconBox .book {
+        right: 3%;
+        top: 2rem;
+        z-index: 2;
+    }
+
+    .iconBox .heart01 {
+        right: 22%;
+        top: 6.5rem;
+        z-index: 1;
+    }
+
     .iconBox .heart02 {
-        top: 50px;
+        top: 1rem;
         left: 58%;
         width: 40%;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .iconBox .heart02 > img {
         transform: rotate(23deg);

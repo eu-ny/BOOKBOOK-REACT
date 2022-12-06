@@ -26,7 +26,18 @@
 .quiz__questionsImg {
     width: 50%;
     margin-bottom: 30px;
+    animation: hvr-pulse 3s infinite linear;
 }
+
+@keyframes hvr-pulse {
+    25% {
+      transform: scale(1.1);
+    }
+    75% {
+      transform: scale(0.9);
+    }
+}
+
 .quiz__button {
     display: block;
     margin: 0 auto;

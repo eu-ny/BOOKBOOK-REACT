@@ -1,4 +1,5 @@
 import React from "react";
+// import { Link } from "react-router-dom";
 
 const BookSearchResult = ({ books, answerKeyword }) => {
     console.log(books)
@@ -33,7 +34,8 @@ const BookSearchResult = ({ books, answerKeyword }) => {
                             <p className="date">
                                 {book?.volumeInfo?.publishedDate?.replace(/-/g,".")}
                             </p>
-                            <button className="box__button" type="button">
+                            {/* <Link to={`/RightAside/${book?.volumeInfo?.title}`}> */}
+                            <button className="box__button" type="button" onClick={(e)=>{BookSearchResult(book)}}>
                                 view
                             </button>
                         </div>
